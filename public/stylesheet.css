@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: khaki;
+  background-color: #624464;
 }
 
 /* HOME PAGE */
@@ -17,6 +17,7 @@ p.title {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   font-size: 60px;
+  color: #eaeaea;
 }
 
 p.main-text {
@@ -24,6 +25,7 @@ p.main-text {
   font-weight: lighter;
   font-size: 30px;
   margin-bottom: 60px;
+  color: #eaeaea;
 }
 
 form {
@@ -36,32 +38,38 @@ p.sign-here {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 15px;
+  color: #eaeaea;
 }
 
 input.btn-submit {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: bold;
+  color: #eaeaea;
   height: 35px;
   width: 150px;
-  border: dashed 1px black;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
 }
 
 #canvas {
-  background-color: white;
-  border: dashed 1px black;
+  background-color: #fed6be;
+  border: dashed 1px #444444;
+  cursor: crosshair;
 }
 
 .first-name {
+  background-color: #fed6be;
   height: 35px;
   width: 248px;
-  border: dashed 1px black;
+  border: dashed 1px #444444;
 }
 
 .last-name {
+  background-color: #fed6be;
   height: 35px;
   width: 248px;
-  border: dashed 1px black;
+  border: dashed 1px #444444;
 }
 
 p.error-message {
@@ -84,17 +92,42 @@ p.title-signature {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   font-size: 40px;
+  color: #eaeaea;
 }
 p.text-signature {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   font-size: 20px;
   margin-bottom: 40px;
+  color: #eaeaea;
 }
+
+img.image-signature {
+  background-color: #fed6be;
+  border: solid 1px #eaeaea;
+  margin-top: 50px;
+}
+
 p.link-signature {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   font-size: 20px;
+  margin-top: 70px;
+  color: #eaeaea;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #d02e77;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #eaeaea;
 }
 
 /* SIGNERS PAGE */
@@ -110,6 +143,7 @@ p.signers-title {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   font-size: 40px;
+  color: #eaeaea;
   margin-right: 120px;
   margin-left: 120px;
   text-align: center;
@@ -121,4 +155,5 @@ ul {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   font-size: 20px;
+  color: #eaeaea;
 }
