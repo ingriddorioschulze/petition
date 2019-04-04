@@ -37,7 +37,9 @@ app.post("/petition", checkSigned, (req, res) => {
         req.body.FirstName.trim().length === 0 ||
         req.body.LastName.trim().length === 0
     ) {
-        return res.render("error");
+        return res.render("home", {
+            error: true
+        });
     }
     db.signatures(
         req.body.FirstName,
@@ -51,7 +53,9 @@ app.post("/petition", checkSigned, (req, res) => {
         })
         .catch(err => {
             console.log("err in signatures", err);
-            res.render("error");
+            res.render("home", {
+                error: true
+            });
         });
 });
 

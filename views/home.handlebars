@@ -1,14 +1,25 @@
-<p>Don't feed pigeons!</p>
-<p>Sign our petition to make feeding <a href=""> pigeons</a> forbidden in big cities</p>
-<form method="POST">
-    <input type="text" name="FirstName" placeholder="first name" required>
-    <input type="text" name="LastName" placeholder="last name" required></br>
-    <canvas class="signature"></canvas></br>
-    <p>sign here</p>
-    <input type="text" name="Signature" required></br>
-    <input type="submit" value="Submit">
-</form>
+<div class="home-container">
+    <p class="title"><b>DON'T FEED</b> pigeons!</p>
+    <p class="main-text">Sign our petition to make feeding <a href=""> pigeons</a> forbidden in big cities.</p>
 
+    {{#if error}}
+    <p class="error-message">Sadly, something went wrong. Please try again!</p>
+    {{/if}}
+
+
+    <form method="POST">
+        <input class="first-name" type="text" name="FirstName" placeholder="first name" required><br />
+        <br />
+        <input class="last-name" type="text" name="LastName" placeholder="last name" required><br />
+        <br />
+        <canvas id="canvas" height="100" width="500"></canvas><br />
+        <p class="sign-here">sign here</p>
+        <input class="signature-hidden" type="hidden" name="Signature"><br />
+        <input class="btn-submit" type="submit" value="Submit">
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/script.js"></script>
 
 {{!-- //small text with link//
 //image//

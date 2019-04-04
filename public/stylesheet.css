@@ -1,8 +1,124 @@
 * {
   box-sizing: border-box;
 }
-
 body {
-  margin: 0;
   background-color: khaki;
+}
+
+/* HOME PAGE */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 60px;
+}
+
+p.main-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.sign-here {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input.btn-submit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  height: 35px;
+  width: 150px;
+  border: dashed 1px black;
+}
+
+#canvas {
+  background-color: white;
+  border: dashed 1px black;
+}
+
+.first-name {
+  height: 35px;
+  width: 248px;
+  border: dashed 1px black;
+}
+
+.last-name {
+  height: 35px;
+  width: 248px;
+  border: dashed 1px black;
+}
+
+p.error-message {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  color: red;
+}
+
+/* THANKS/SIGNED PAGE */
+
+div.signature-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.title-signature {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 40px;
+}
+p.text-signature {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+p.link-signature {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+/* SIGNERS PAGE */
+
+div.signers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.signers-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 40px;
+  margin-right: 120px;
+  margin-left: 120px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  line-height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
 }
