@@ -3,6 +3,7 @@ const hb = require("express-handlebars");
 const db = require("./db");
 const cookieSession = require("cookie-session");
 const csurf = require("csurf");
+const bcrypt = require("bcryptjs");
 
 const app = express();
 
@@ -32,9 +33,6 @@ app.set("view engine", "handlebars");
 
 app.use(express.static("./public"));
 
-//how do we query a database from a express server?//
-//any changes to a db (UPDATE, INSERT, or DELETE)//
-// should be done in a POST route//
 function checkSigned(request, response, next) {
     if (request.session.signed === "submitted") {
         response.redirect("/petition/signed");
@@ -43,25 +41,20 @@ function checkSigned(request, response, next) {
     }
 }
 
+app.use("/petition", (req, res, next) => {
+    if (req.session.user !== undefined) {
+        next();
+    } else {
+        res.redirect("/register");
+    }
+});
+
 app.get("/petition", checkSigned, (req, res) => {
     res.render("home", {});
 });
 
 app.post("/petition", checkSigned, (req, res) => {
-    if (
-        req.body.FirstName.trim().length === 0 ||
-        req.body.LastName.trim().length === 0
-    ) {
-        return res.render("home", {
-            error: true
-        });
-    }
-    db.signatures(
-        req.body.FirstName,
-        req.body.LastName,
-        req.body.Signature,
-        new Date()
-    )
+    db.signatures(req.session.user, req.body.Signature, new Date())
         .then(id => {
             req.session.signed = "submitted";
             req.session.idSignatures = id;
@@ -89,11 +82,100 @@ app.get("/petition/signed", (req, res) => {
 
 app.get("/petition/signers", (req, res) => {
     db.getSignatures().then(signatures => {
-        console.log(signatures);
         res.render("signers", {
             signatures: signatures
         });
     });
 });
+
+// ROUTE register //
+//ToDo: handle errors from query parameter//
+app.get("/register", (req, res) => {
+    res.render("register", {});
+});
+
+app.post("/register", (req, res) => {
+    hashPassword(req.body.Password)
+        .then(hashedPassword => {
+            return db.saveUser(
+                req.body.FirstName,
+                req.body.LastName,
+                req.body.Email,
+                hashedPassword,
+                new Date()
+            );
+        })
+        .then(userId => {
+            req.session.user = {
+                id: userId,
+                firstName: req.body.FirstName,
+                lastName: req.body.LastName
+            };
+            res.redirect("/petition");
+        })
+        .catch(() => {
+            res.redirect("/register?error=email");
+        });
+});
+
+// ROUTE Login//
+
+app.get("/login", (req, res) => {
+    res.render("login", {});
+});
+
+app.post("/login", (req, res) => {
+    db.getUser(req.body.Email).then(user => {
+        if (user == null) {
+            return res.redirect("/login?error=usernotfound");
+        }
+        checkPassword(req.body.Password, user.password).then(doesMatch => {
+            if (doesMatch == true) {
+                req.session.user = {
+                    id: user.id,
+                    firstName: user.first_name,
+                    lastName: user.last_name
+                };
+                res.redirect("/petition");
+            } else {
+                res.redirect("/login?error=wrongpassword");
+            }
+        });
+    });
+});
+
+//BCRYPT//
+
+function hashPassword(plainTextPassword) {
+    return new Promise(function(resolve, reject) {
+        bcrypt.genSalt(function(err, salt) {
+            if (err) {
+                return reject(err);
+            }
+            bcrypt.hash(plainTextPassword, salt, function(err, hash) {
+                if (err) {
+                    return reject(err);
+                }
+                resolve(hash);
+            });
+        });
+    });
+}
+
+function checkPassword(textEnteredInLoginForm, hashedPasswordFromDatabase) {
+    return new Promise(function(resolve, reject) {
+        bcrypt.compare(
+            textEnteredInLoginForm,
+            hashedPasswordFromDatabase,
+            function(err, doesMatch) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(doesMatch);
+                }
+            }
+        );
+    });
+}
 
 app.listen(8080, () => console.log("Oi, petition!"));

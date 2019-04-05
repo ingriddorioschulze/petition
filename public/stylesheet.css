@@ -58,20 +58,6 @@ input.btn-submit {
   cursor: crosshair;
 }
 
-.first-name {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-}
-
-.last-name {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-}
-
 p.error-message {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;

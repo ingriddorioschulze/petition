@@ -8,5 +8,7 @@ CREATE TABLE  signatures (
     time TIMESTAMPTZ
 );
 
+ALTER TABLE signatures ADD COLUMN userId BIGINT REFERENCES users (id); 
+
 -- run in the terminal
 -- psql petition -f sql/signatures.sql
