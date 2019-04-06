@@ -34,7 +34,7 @@ app.set("view engine", "handlebars");
 app.use(express.static("./public"));
 
 function checkSigned(request, response, next) {
-    if (request.session.signed === "submitted") {
+    if (request.session.user.signatureId !== null) {
         response.redirect("/petition/signed");
     } else {
         next();
@@ -56,8 +56,7 @@ app.get("/petition", checkSigned, (req, res) => {
 app.post("/petition", checkSigned, (req, res) => {
     db.signatures(req.session.user, req.body.Signature, new Date())
         .then(id => {
-            req.session.signed = "submitted";
-            req.session.idSignatures = id;
+            req.session.user.signatureId = id;
             res.redirect("/petition/signed");
         })
         .catch(err => {
@@ -69,12 +68,14 @@ app.post("/petition", checkSigned, (req, res) => {
 });
 
 app.get("/petition/signed", (req, res) => {
-    if (req.session.idSignatures) {
-        db.getImageSignature(req.session.idSignatures).then(imageSignature => {
-            res.render("thanks", {
-                imageSignature: imageSignature
-            });
-        });
+    if (req.session.user.signatureId) {
+        db.getImageSignature(req.session.user.signatureId).then(
+            imageSignature => {
+                res.render("thanks", {
+                    imageSignature: imageSignature
+                });
+            }
+        );
     } else {
         res.redirect("/petition");
     }
@@ -132,11 +133,16 @@ app.post("/login", (req, res) => {
         checkPassword(req.body.Password, user.password).then(doesMatch => {
             if (doesMatch == true) {
                 req.session.user = {
-                    id: user.id,
+                    id: user.user_id,
                     firstName: user.first_name,
-                    lastName: user.last_name
+                    lastName: user.last_name,
+                    signatureId: user.signature_id
                 };
-                res.redirect("/petition");
+                if (user.signature_id == null) {
+                    res.redirect("/petition");
+                } else {
+                    res.redirect("/petition/signed");
+                }
             } else {
                 res.redirect("/login?error=wrongpassword");
             }
@@ -177,5 +183,12 @@ function checkPassword(textEnteredInLoginForm, hashedPasswordFromDatabase) {
         );
     });
 }
+
+//ROUTE LOGOUT//
+
+app.post("/logout", (req, res) => {
+    req.session = null;
+    res.redirect("/register");
+});
 
 app.listen(8080, () => console.log("Oi, petition!"));

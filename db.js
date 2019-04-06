@@ -44,7 +44,7 @@ exports.saveUser = function saveUser(
 };
 
 exports.getUser = function(email_address) {
-    const q = `SELECT id, first_name, last_name, password FROM users WHERE email_address = $1`;
+    const q = `SELECT users.id AS user_id, users.first_name, users.last_name, password, signatures.id AS signature_id FROM users LEFT JOIN signatures ON users.id = signatures.user_id WHERE email_address = $1`;
     const params = [email_address];
     return db.query(q, params).then(result => {
         if (result.rows.length === 0) {
