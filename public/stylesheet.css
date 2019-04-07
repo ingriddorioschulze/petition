@@ -15,17 +15,19 @@ body {
 
 p.title {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
   font-size: 60px;
   color: #eaeaea;
+  text-align: center;
 }
 
 p.main-text {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
   font-size: 30px;
   margin-bottom: 60px;
   color: #eaeaea;
+  margin-right: 190px;
+  margin-left: 190px;
+  text-align: center;
 }
 
 form {
@@ -39,6 +41,7 @@ p.sign-here {
   font-weight: bold;
   font-size: 15px;
   color: #eaeaea;
+  text-align: center;
 }
 
 input.btn-submit {
@@ -60,9 +63,10 @@ input.btn-submit {
 
 p.error-message {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
+  font-weight: bold;
   font-size: 20px;
   color: red;
+  text-align: center;
 }
 
 /* THANKS/SIGNED PAGE */
@@ -76,16 +80,16 @@ div.signature-container {
 
 p.title-signature {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  font-size: 40px;
+  font-size: 60px;
   color: #eaeaea;
+  text-align: center;
 }
 p.text-signature {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 40px;
   color: #eaeaea;
+  text-align: center;
 }
 
 img.image-signature {
@@ -96,10 +100,10 @@ img.image-signature {
 
 p.link-signature {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
   font-size: 20px;
   margin-top: 70px;
   color: #eaeaea;
+  text-align: center;
 }
 
 a {
@@ -127,8 +131,7 @@ div.signers-container {
 
 p.signers-title {
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  font-size: 40px;
+  font-size: 60px;
   color: #eaeaea;
   margin-right: 120px;
   margin-left: 120px;
@@ -137,9 +140,192 @@ p.signers-title {
 
 ul {
   list-style-type: none;
-  line-height: 40px;
+  line-height: 30px;
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
   font-size: 20px;
   color: #eaeaea;
+}
+
+/* LOGIN PAGE  */
+
+div.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+p.login-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: #eaeaea;
+  text-align: center;
+  margin-right: 190px;
+  margin-left: 190px;
+}
+
+.login-email {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+.login-password {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.login-btn-submit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  height: 35px;
+  width: 150px;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
+  margin-top: 30px;
+}
+
+/* REGISTRATION PAGE  */
+
+div.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.register-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: #eaeaea;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-right: 190px;
+  margin-left: 190px;
+}
+
+input.register-first-name {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.register-last-name {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.register-email {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.register-password {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.register-btn-submit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  height: 35px;
+  width: 150px;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
+  margin-top: 30px;
+}
+
+p.register-member-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: #eaeaea;
+  text-align: center;
+}
+
+/* LOGOUT */
+
+div.logout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input.logout-btn-submit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  height: 35px;
+  width: 200px;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
+  margin-top: 30px;
+}
+
+/* PROFILE PAGE */
+
+div.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.profile-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: #eaeaea;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-right: 190px;
+  margin-left: 190px;
+}
+
+input.profile-age {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.profile-city {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.profile-homepage {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+}
+
+input.profile-btn-submit {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  height: 35px;
+  width: 150px;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
+  margin-top: 30px;
 }

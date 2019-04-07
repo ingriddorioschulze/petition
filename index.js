@@ -72,6 +72,8 @@ app.get("/petition/signed", (req, res) => {
         db.getImageSignature(req.session.user.signatureId).then(
             imageSignature => {
                 res.render("thanks", {
+                    firstName: req.session.user.firstName,
+                    lastName: req.session.user.lastName,
                     imageSignature: imageSignature
                 });
             }
@@ -110,9 +112,10 @@ app.post("/register", (req, res) => {
             req.session.user = {
                 id: userId,
                 firstName: req.body.FirstName,
-                lastName: req.body.LastName
+                lastName: req.body.LastName,
+                signatureId: null
             };
-            res.redirect("/petition");
+            res.redirect("/profile");
         })
         .catch(() => {
             res.redirect("/register?error=email");
@@ -189,6 +192,12 @@ function checkPassword(textEnteredInLoginForm, hashedPasswordFromDatabase) {
 app.post("/logout", (req, res) => {
     req.session = null;
     res.redirect("/register");
+});
+
+//ROUTE PROFILE//
+
+app.get("/profile", (req, res) => {
+    res.render("profile", {});
 });
 
 app.listen(8080, () => console.log("Oi, petition!"));
