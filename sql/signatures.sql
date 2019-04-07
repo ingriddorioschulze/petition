@@ -9,6 +9,9 @@ CREATE TABLE  signatures (
 );
 
 ALTER TABLE signatures ADD COLUMN user_id BIGINT REFERENCES users (id); 
+ALTER TABLE signatures DROP COLUMN first_name;
+ALTER TABLE signatures DROP COLUMN last_name;
+signatures ADD COLUMN user_id BIGINT REFERENCES users (id); 
 
 -- run in the terminal
 -- psql petition -f sql/signatures.sql

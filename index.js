@@ -41,13 +41,15 @@ function checkSigned(request, response, next) {
     }
 }
 
-app.use("/petition", (req, res, next) => {
+function checkLogIn(req, res, next) {
     if (req.session.user !== undefined) {
         next();
     } else {
         res.redirect("/register");
     }
-});
+}
+
+app.use("/petition", checkLogIn);
 
 app.get("/petition", checkSigned, (req, res) => {
     res.render("home", {});
@@ -91,6 +93,14 @@ app.get("/petition/signers", (req, res) => {
     });
 });
 
+app.get("/petition/signers/:city", (req, res) => {
+    db.getSignaturesCity(req.params.city).then(signatures => {
+        res.render("signers", {
+            signatures: signatures
+        });
+    });
+});
+
 // ROUTE register //
 //ToDo: handle errors from query parameter//
 app.get("/register", (req, res) => {
@@ -113,7 +123,8 @@ app.post("/register", (req, res) => {
                 id: userId,
                 firstName: req.body.FirstName,
                 lastName: req.body.LastName,
-                signatureId: null
+                signatureId: null,
+                profileId: null
             };
             res.redirect("/profile");
         })
@@ -139,9 +150,12 @@ app.post("/login", (req, res) => {
                     id: user.user_id,
                     firstName: user.first_name,
                     lastName: user.last_name,
-                    signatureId: user.signature_id
+                    signatureId: user.signature_id,
+                    profileId: user.profile_id
                 };
-                if (user.signature_id == null) {
+                if (user.profile_id == null) {
+                    res.redirect("/profile");
+                } else if (user.signature_id == null) {
                     res.redirect("/petition");
                 } else {
                     res.redirect("/petition/signed");
@@ -196,8 +210,23 @@ app.post("/logout", (req, res) => {
 
 //ROUTE PROFILE//
 
-app.get("/profile", (req, res) => {
-    res.render("profile", {});
+app.get("/profile", checkLogIn, (req, res) => {
+    if (req.session.user.profileId == null) {
+        res.render("profile");
+    } else {
+        res.redirect("/petition");
+    }
+});
+
+app.post("/profile", checkLogIn, (req, res) => {
+    db.saveProfile(
+        req.session.user.id,
+        req.body.Age,
+        req.body.City,
+        req.body.Homepage
+    ).then(profile => {
+        res.redirect("/petition");
+    });
 });
 
 app.listen(8080, () => console.log("Oi, petition!"));
