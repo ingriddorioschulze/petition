@@ -219,6 +219,12 @@ app.get("/profile", checkLogIn, (req, res) => {
 });
 
 app.post("/profile", checkLogIn, (req, res) => {
+    if (
+        req.body.Homepage.indexOf("http://") !== 0 &&
+        req.body.Homepage.indexOf("https://") !== 0
+    ) {
+        return res.redirect("/profile?error=invalidhomepage");
+    }
     db.saveProfile(
         req.session.user.id,
         req.body.Age,
@@ -229,4 +235,57 @@ app.post("/profile", checkLogIn, (req, res) => {
     });
 });
 
+//ROUTE PROFILE EDIT//
+
+app.get("/profile/edit", checkLogIn, (req, res) => {
+    db.getEditProfile(req.session.user.id).then(editProfile => {
+        res.render("profileEdit", editProfile);
+    });
+});
+
+app.post("/profile/edit", checkLogIn, (req, res) => {
+    if (
+        req.body.Homepage.indexOf("http://") !== 0 &&
+        req.body.Homepage.indexOf("https://") !== 0
+    ) {
+        return res.redirect("/profile/edit?error=invalidhomepage");
+    }
+    let passwordPromise;
+    if (req.body.Password === "") {
+        passwordPromise = Promise.resolve();
+    } else {
+        passwordPromise = hashPassword(req.body.Password);
+    }
+    passwordPromise
+        .then(hashedPassword => {
+            return db.updateProfile(
+                req.session.user.id,
+                req.body.FirstName,
+                req.body.LastName,
+                req.body.Email,
+                hashedPassword,
+                req.body.Age,
+                req.body.City,
+                req.body.Homepage
+            );
+        })
+        .then(() => {
+            res.redirect("/petition/signed");
+        });
+});
+
+//DELETE SIGNATURE//
+
+app.post("/signature/delete", checkLogIn, (req, res) => {
+    db.deleteSignature(req.session.user.id).then(() => {
+        req.session.user.signatureId = null;
+        res.redirect("/petition");
+    });
+});
+
+//DELETE PROFILE//
+
+app.post("/profile/delete", checkLogIn, (req, res) => {});
+
+//SERVER//
 app.listen(8080, () => console.log("Oi, petition!"));

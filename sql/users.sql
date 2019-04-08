@@ -10,4 +10,5 @@ CREATE TABLE  users (
 
 ALTER TABLE users ADD COLUMN time TIMESTAMPTZ; 
 
-ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email_address);
+ALTER TABLE users ADD CONSTRAINT email_unique 
+UNIQUE (email_address);

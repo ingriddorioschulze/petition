@@ -37,8 +37,9 @@ exports.getSignaturesCity = city => {
 };
 
 exports.getImageSignature = id => {
-    const q = `SELECT signature FROM signatures WHERE id = ${id}`;
-    return db.query(q).then(result => {
+    const q = `SELECT signature FROM signatures WHERE id = $1`;
+    const params = [id];
+    return db.query(q, params).then(result => {
         return result.rows[0].signature;
     });
 };
@@ -84,3 +85,58 @@ exports.saveProfile = function(user_id, age, city, url) {
         return result.rows[0];
     });
 };
+
+exports.getEditProfile = function(user_id) {
+    const q = `SELECT first_name, last_name, email_address, age, city, url FROM users
+    LEFT JOIN user_profiles ON users.id = user_profiles.user_id
+    WHERE users.id = $1`;
+    const params = [user_id];
+    return db.query(q, params).then(result => {
+        return result.rows[0];
+    });
+};
+
+exports.updateProfile = function(
+    user_id,
+    first_name,
+    last_name,
+    email_address,
+    password,
+    age,
+    city,
+    url
+) {
+    let userQuery;
+    let userParams;
+
+    if (password) {
+        userQuery = `UPDATE users 
+        SET first_name = $1, last_name = $2, password = $3, email_address = $4
+        WHERE id = $5`;
+        userParams = [first_name, last_name, password, email_address, user_id];
+    } else {
+        userQuery = `UPDATE users 
+        SET first_name = $1, last_name = $2, email_address = $3
+        WHERE id = $4`;
+        userParams = [first_name, last_name, email_address, user_id];
+    }
+    return db.query(userQuery, userParams).then(() => {
+        const profileQuery = `INSERT INTO user_profiles (user_id, age, city, url)
+        VALUES ($1, $2, $3, $4)
+        ON CONFLICT (user_id)
+        DO UPDATE SET age = $2, city = $3, url = $4`;
+
+        const profileParams = [user_id, age, city, url];
+        return db.query(profileQuery, profileParams);
+    });
+};
+
+//DELETE SIGNATURE//
+
+exports.deleteSignature = function(user_id) {
+    const q = `DELETE FROM signatures WHERE user_id = $1`;
+    const params = [user_id];
+    return db.query(q, params);
+};
+
+//DELETE PROFILE//

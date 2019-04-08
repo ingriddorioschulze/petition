@@ -3,6 +3,7 @@
 }
 body {
   background-color: #624464;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* HOME PAGE */
@@ -14,14 +15,12 @@ body {
 }
 
 p.title {
-  font-family: "Montserrat", sans-serif;
   font-size: 60px;
   color: #eaeaea;
   text-align: center;
 }
 
 p.main-text {
-  font-family: "Montserrat", sans-serif;
   font-size: 30px;
   margin-bottom: 60px;
   color: #eaeaea;
@@ -37,7 +36,6 @@ form {
 }
 
 p.sign-here {
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 15px;
   color: #eaeaea;
@@ -45,7 +43,6 @@ p.sign-here {
 }
 
 input.btn-submit {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #eaeaea;
@@ -62,7 +59,6 @@ input.btn-submit {
 }
 
 p.error-message {
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 20px;
   color: red;
@@ -79,13 +75,11 @@ div.signature-container {
 }
 
 p.title-signature {
-  font-family: "Montserrat", sans-serif;
   font-size: 60px;
   color: #eaeaea;
   text-align: center;
 }
 p.text-signature {
-  font-family: "Montserrat", sans-serif;
   font-size: 30px;
   margin-bottom: 40px;
   color: #eaeaea;
@@ -99,7 +93,6 @@ img.image-signature {
 }
 
 p.link-signature {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   margin-top: 70px;
   color: #eaeaea;
@@ -130,7 +123,6 @@ div.signers-container {
 }
 
 p.signers-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 60px;
   color: #eaeaea;
   margin-right: 120px;
@@ -141,7 +133,6 @@ p.signers-title {
 ul {
   list-style-type: none;
   line-height: 30px;
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: #eaeaea;
 }
@@ -157,7 +148,6 @@ div.login-container {
 }
 
 p.login-text {
-  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   color: #eaeaea;
   text-align: center;
@@ -170,6 +160,8 @@ p.login-text {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .login-password {
@@ -177,10 +169,11 @@ p.login-text {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.login-btn-submit {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #eaeaea;
@@ -201,7 +194,6 @@ div.register-container {
 }
 
 p.register-text {
-  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   color: #eaeaea;
   text-align: center;
@@ -215,6 +207,8 @@ input.register-first-name {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.register-last-name {
@@ -222,6 +216,8 @@ input.register-last-name {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.register-email {
@@ -229,6 +225,8 @@ input.register-email {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.register-password {
@@ -236,10 +234,11 @@ input.register-password {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.register-btn-submit {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #eaeaea;
@@ -247,11 +246,11 @@ input.register-btn-submit {
   width: 150px;
   border: dashed 1px #444444;
   background-color: #d02e77;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 p.register-member-text {
-  font-family: "Montserrat", sans-serif;
   font-size: 25px;
   color: #eaeaea;
   text-align: center;
@@ -267,7 +266,6 @@ div.logout-container {
 }
 
 input.logout-btn-submit {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #eaeaea;
@@ -288,7 +286,6 @@ div.profile-container {
 }
 
 p.profile-text {
-  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   color: #eaeaea;
   text-align: center;
@@ -302,6 +299,8 @@ input.profile-age {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.profile-city {
@@ -309,6 +308,8 @@ input.profile-city {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.profile-homepage {
@@ -316,10 +317,11 @@ input.profile-homepage {
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 input.profile-btn-submit {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #eaeaea;
@@ -328,4 +330,96 @@ input.profile-btn-submit {
   border: dashed 1px #444444;
   background-color: #d02e77;
   margin-top: 30px;
+}
+
+/* PROFILE EDIT PAGE */
+
+div.profile-edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p.profile-edit-text {
+  font-size: 40px;
+  color: #eaeaea;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-right: 190px;
+  margin-left: 190px;
+}
+
+input.profile-edit-first-name {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-last-name {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-email {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-password {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-age {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-city {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-homepage {
+  background-color: #fed6be;
+  height: 35px;
+  width: 248px;
+  border: dashed 1px #444444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.profile-edit-btn-submit {
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  height: 35px;
+  width: 150px;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
+  margin-top: 50px;
 }
