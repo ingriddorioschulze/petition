@@ -69,4 +69,5 @@ app.post("/signature/delete", checkLogIn, (req, res) => {
 });
 
 //SERVER//
-app.listen(8080, () => console.log("Oi, petition!"));
+
+app.listen(process.env.PORT || 8080, () => console.log("Oi, petition!"));

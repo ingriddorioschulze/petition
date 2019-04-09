@@ -1,6 +1,10 @@
 const spicedPg = require("spiced-pg");
 
-const db = spicedPg("postgres:postgres:postgres@localhost:5432/petition");
+const dbUrl =
+    process.env.DATABASE_URL ||
+    "postgres:postgres:postgres@localhost:5432/petition";
+
+const db = spicedPg(dbUrl);
 
 // exports.addCity = function addCity(city, country, description) {
 //     let q = "INSERT INTO cities (city) VALUES ($1, $2, $3)";
