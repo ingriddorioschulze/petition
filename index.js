@@ -56,6 +56,9 @@ app.get("/petition", checkSigned, (req, res) => {
 });
 
 app.post("/petition", checkSigned, (req, res) => {
+    if (req.body.Signature === "") {
+        return res.redirect("/petition?error=emptysignature");
+    }
     db.signatures(req.session.user, req.body.Signature, new Date())
         .then(id => {
             req.session.user.signatureId = id;
@@ -221,7 +224,8 @@ app.get("/profile", checkLogIn, (req, res) => {
 app.post("/profile", checkLogIn, (req, res) => {
     if (
         req.body.Homepage.indexOf("http://") !== 0 &&
-        req.body.Homepage.indexOf("https://") !== 0
+        req.body.Homepage.indexOf("https://") !== 0 &&
+        req.body.Homepage !== ""
     ) {
         return res.redirect("/profile?error=invalidhomepage");
     }
@@ -246,7 +250,8 @@ app.get("/profile/edit", checkLogIn, (req, res) => {
 app.post("/profile/edit", checkLogIn, (req, res) => {
     if (
         req.body.Homepage.indexOf("http://") !== 0 &&
-        req.body.Homepage.indexOf("https://") !== 0
+        req.body.Homepage.indexOf("https://") !== 0 &&
+        req.body.Homepage !== ""
     ) {
         return res.redirect("/profile/edit?error=invalidhomepage");
     }
@@ -270,6 +275,8 @@ app.post("/profile/edit", checkLogIn, (req, res) => {
             );
         })
         .then(() => {
+            req.session.user.firstName = req.body.FirstName;
+            req.session.user.lastName = req.body.LastName;
             res.redirect("/petition/signed");
         });
 });

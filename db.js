@@ -6,9 +6,9 @@ const db = spicedPg("postgres:postgres:postgres@localhost:5432/petition");
 //     let q = "INSERT INTO cities (city) VALUES ($1, $2, $3)";
 
 exports.signatures = function signatures(user, signature, time) {
-    const q = `INSERT INTO signatures (first_name, last_name, signature, time, user_id) 
-    VALUES ($1, $2, $3, $4, $5) RETURNING id`;
-    const params = [user.firstName, user.lastName, signature, time, user.id];
+    const q = `INSERT INTO signatures (signature, time, user_id) 
+    VALUES ($1, $2, $3) RETURNING id`;
+    const params = [signature, time, user.id];
     return db.query(q, params).then(result => {
         return result.rows[0].id;
     });
@@ -108,7 +108,7 @@ exports.updateProfile = function(
 ) {
     let userQuery;
     let userParams;
-
+    //comparar com cookies//
     if (password) {
         userQuery = `UPDATE users 
         SET first_name = $1, last_name = $2, password = $3, email_address = $4

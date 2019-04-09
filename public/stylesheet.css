@@ -50,6 +50,7 @@ input.btn-submit {
   width: 150px;
   border: dashed 1px #444444;
   background-color: #d02e77;
+  margin-top: 40px;
 }
 
 #canvas {
@@ -63,6 +64,7 @@ p.error-message {
   font-size: 20px;
   color: red;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 /* THANKS/SIGNED PAGE */
@@ -95,6 +97,14 @@ img.image-signature {
 p.link-signature {
   font-size: 20px;
   margin-top: 70px;
+  color: #eaeaea;
+  text-align: center;
+}
+
+p.link-edit-profile {
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   color: #eaeaea;
   text-align: center;
 }
@@ -422,4 +432,46 @@ input.profile-edit-btn-submit {
   border: dashed 1px #444444;
   background-color: #d02e77;
   margin-top: 50px;
+}
+
+/* DELETE SIGNATURE */
+
+input.link-delete-signature {
+  font-size: 20px;
+  color: #d02e77;
+  background: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 190px;
+  margin-left: 190px;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+input.link-delete-signature:hover {
+  text-decoration: underline;
+  color: #eaeaea;
+}
+
+/* DELETE PROFILE */
+
+input.link-delete-profile {
+  font-size: 20px;
+  color: #d02e77;
+  background: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-right: 190px;
+  margin-left: 190px;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+input.link-delete-profile:hover {
+  text-decoration: underline;
+  color: #eaeaea;
 }

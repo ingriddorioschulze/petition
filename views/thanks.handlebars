@@ -3,16 +3,16 @@
     <p class="text-signature">Thank you <b>{{firstName}} {{lastName}}</b> for signing our petition
         to make feeding <a href="https://en.wikipedia.org/wiki/Feral_pigeon">pigeons</a> forbidden!</p>
     <img class="image-signature" src="{{imageSignature}}">
-    <p class="link-signature"><a href="/petition/signers">See all who also signed</a></p>
-    <p class="link-edit-profile"><a href="/profile/edit">Edit your profile</a></p>
+    <p class="link-signature"><a href="/petition/signers">see all who also signed</a></p>
+    <p class="link-edit-profile"><a href="/profile/edit">edit your profile</a></p>
 
     <form method="POST" action="/signature/delete">
-        <input class="link-delete-signature" type="submit" value="Delete your signature">
+        <input class="link-delete-signature" type="submit" value="delete your signature">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
 
     <form method="POST" action="/profile/delete">
-        <input class="link-delete-profile" type="submit" value="Delete your profile">
+        <input class="link-delete-profile" type="submit" value="delete your profile">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
 
