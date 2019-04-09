@@ -10,13 +10,6 @@
         <input class="link-delete-signature" type="submit" value="delete your signature">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
-
-    <form method="POST" action="/profile/delete">
-        <input class="link-delete-profile" type="submit" value="delete your profile">
-        <input type="hidden" name="_csrf" value="{{csrfToken}}">
-    </form>
-
-
 </div>
 {{>logout}}
 

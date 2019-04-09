@@ -454,24 +454,3 @@ input.link-delete-signature:hover {
   text-decoration: underline;
   color: #eaeaea;
 }
-
-/* DELETE PROFILE */
-
-input.link-delete-profile {
-  font-size: 20px;
-  color: #d02e77;
-  background: none;
-  padding: 0;
-  text-align: center;
-  margin-bottom: 40px;
-  margin-right: 190px;
-  margin-left: 190px;
-  border: none;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-input.link-delete-profile:hover {
-  text-decoration: underline;
-  color: #eaeaea;
-}
