@@ -26,7 +26,6 @@ router
                 res.redirect("/petition/signed");
             })
             .catch(err => {
-                console.log("err in signatures", err);
                 res.render("home", {
                     error: true
                 });
