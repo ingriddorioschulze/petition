@@ -76,4 +76,8 @@ app.post("/signature/delete", checkLogIn, (req, res) => {
 
 //SERVER//
 
-app.listen(process.env.PORT || 8080, () => console.log("Oi, petition!"));
+if (require.main == module) {
+    app.listen(process.env.PORT || 8080, () => console.log("Oi, petition!"));
+}
+
+module.exports = app;

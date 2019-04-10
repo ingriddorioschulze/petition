@@ -7,7 +7,11 @@ const router = express.Router();
 router
     .route("/login")
     .get((req, res) => {
-        res.render("login", {});
+        if (req.session.user !== undefined) {
+            res.redirect("/petition");
+        } else {
+            res.render("login", {});
+        }
     })
 
     .post((req, res) => {

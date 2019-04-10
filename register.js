@@ -7,7 +7,11 @@ const router = express.Router();
 router
     .route("/register")
     .get((req, res) => {
-        res.render("register", {});
+        if (req.session.user !== undefined) {
+            res.redirect("/petition");
+        } else {
+            res.render("register", {});
+        }
     })
     .post((req, res) => {
         password

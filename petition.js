@@ -49,11 +49,15 @@ router.get("/petition/signed", (req, res) => {
 });
 
 router.get("/petition/signers", (req, res) => {
-    db.getSignatures().then(signatures => {
-        res.render("signers", {
-            signatures: signatures
+    if (req.session.user.signatureId) {
+        db.getSignatures().then(signatures => {
+            res.render("signers", {
+                signatures: signatures
+            });
         });
-    });
+    } else {
+        res.redirect("/petition");
+    }
 });
 
 router.get("/petition/signers/:city", (req, res) => {
