@@ -1,4 +1,5 @@
 <div class="login-container">
+    {{>imagepigeon}}
     <p class="login-text">Please log in.</p>
     <form method="POST">
         <input class="login-email" type="text" name="Email" placeholder="email" required>
@@ -6,4 +7,5 @@
         <input class="login-btn-submit" type="submit" value="LOG IN">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
+    <p class="login-member-text">If you are <b>not</b> a member, please register <a href="/register">here</a>.</p>
 </div>

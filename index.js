@@ -59,6 +59,12 @@ app.post("/logout", (req, res) => {
 app.use("/profile", checkLogIn);
 app.use(profileRouter);
 
+//ROUTE PREVIOUS//
+
+app.use("/previous", (req, res) => {
+    res.redirect("/petition/signed");
+});
+
 //DELETE SIGNATURE//
 
 app.post("/signature/delete", checkLogIn, (req, res) => {

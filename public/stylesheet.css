@@ -6,6 +6,17 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+div.image-pigeon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img.image-pigeon {
+  width: 30%;
+}
+
 /* HOME PAGE */
 .home-container {
   display: flex;
@@ -22,8 +33,9 @@ p.title {
 
 p.main-text {
   font-size: 30px;
-  margin-bottom: 60px;
   color: #eaeaea;
+  margin-bottom: 60px;
+  margin-top: 60px;
   margin-right: 190px;
   margin-left: 190px;
   text-align: center;
@@ -112,6 +124,7 @@ p.link-edit-profile {
 a {
   font-weight: bold;
   text-decoration: none;
+  color: #d02e77;
 }
 
 a:visited {
@@ -145,6 +158,7 @@ ul {
   line-height: 30px;
   font-size: 20px;
   color: #eaeaea;
+  text-align: center;
 }
 
 /* LOGIN PAGE  */
@@ -192,6 +206,13 @@ input.login-btn-submit {
   border: dashed 1px #444444;
   background-color: #d02e77;
   margin-top: 30px;
+}
+
+p.login-member-text {
+  font-size: 25px;
+  color: #eaeaea;
+  text-align: center;
+  margin-top: 40px;
 }
 
 /* REGISTRATION PAGE  */
@@ -276,6 +297,26 @@ div.logout-container {
 }
 
 input.logout-btn-submit {
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  height: 35px;
+  width: 200px;
+  border: dashed 1px #444444;
+  background-color: #d02e77;
+  margin-top: 30px;
+}
+
+/* PREVIOUS */
+
+div.previous-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input.previous-btn-submit {
   font-size: 20px;
   font-weight: bold;
   color: #eaeaea;

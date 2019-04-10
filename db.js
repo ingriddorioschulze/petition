@@ -6,9 +6,6 @@ const dbUrl =
 
 const db = spicedPg(dbUrl);
 
-// exports.addCity = function addCity(city, country, description) {
-//     let q = "INSERT INTO cities (city) VALUES ($1, $2, $3)";
-
 exports.signatures = function signatures(user, signature, time) {
     const q = `INSERT INTO signatures (signature, time, user_id) 
     VALUES ($1, $2, $3) RETURNING id`;
@@ -112,7 +109,7 @@ exports.updateProfile = function(
 ) {
     let userQuery;
     let userParams;
-    //comparar com cookies//
+
     if (password) {
         userQuery = `UPDATE users 
         SET first_name = $1, last_name = $2, password = $3, email_address = $4
@@ -142,5 +139,3 @@ exports.deleteSignature = function(user_id) {
     const params = [user_id];
     return db.query(q, params);
 };
-
-//DELETE PROFILE//

@@ -1,10 +1,10 @@
 <div class="home-container">
     <p class="title"><b>DON'T FEED</b> pigeons!</p>
+    {{>imagepigeon}}
     <p class="main-text">Sign our petition to make feeding <a href="https://en.wikipedia.org/wiki/Feral_pigeon">
             pigeons</a> forbidden in big cities.</p>
-
     {{#if error}}
-    <p class="error-message">Sadly, something went wrong. Please try again!</p>
+    <p class=" error-message">Sadly, something went wrong. Please try again!</p>
     {{/if}}
 
     <form method="POST">
