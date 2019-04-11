@@ -9,6 +9,10 @@
     <p class=" error-message">Sadly, something went wrong. Please try again!</p>
     {{/if}}
 
+    {{#if errorsignature}}
+    <p class="login-error-signature">You didn't sign. Please enter you signature!</p>
+    {{/if}}
+
     <form method="POST">
         <canvas id="canvas" height="100" width="500"></canvas>
         <p class="sign-here">sign here</p>

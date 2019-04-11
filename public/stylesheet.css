@@ -79,6 +79,14 @@ p.error-message {
   margin-bottom: 50px;
 }
 
+p.login-error-signature {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /* THANKS/SIGNED PAGE */
 
 div.signature-container {
@@ -215,6 +223,22 @@ p.login-member-text {
   margin-top: 40px;
 }
 
+p.login-error-user {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+p.login-error-pass {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /* REGISTRATION PAGE  */
 
 div.register-container {
@@ -285,6 +309,14 @@ p.register-member-text {
   font-size: 25px;
   color: #eaeaea;
   text-align: center;
+}
+
+p.register-error-email {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /* LOGOUT */
@@ -381,6 +413,14 @@ input.profile-btn-submit {
   border: dashed 1px #444444;
   background-color: #d02e77;
   margin-top: 30px;
+}
+
+p.profile-error-homepage {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /* PROFILE EDIT PAGE */

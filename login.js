@@ -10,15 +10,19 @@ router
         if (req.session.user !== undefined) {
             res.redirect("/petition");
         } else {
-            res.render("login", {});
+            res.render("login", {
+                erroruser: req.query.erroruser,
+                errorpass: req.query.errorpass
+            });
         }
     })
 
     .post((req, res) => {
         db.getUser(req.body.Email).then(user => {
             if (user == null) {
-                return res.redirect("/login?error=usernotfound");
+                return res.redirect("/login?erroruser=usernotfound");
             }
+
             password
                 .checkPassword(req.body.Password, user.password)
                 .then(doesMatch => {
@@ -38,7 +42,7 @@ router
                             res.redirect("/petition/signed");
                         }
                     } else {
-                        res.redirect("/login?error=wrongpassword");
+                        res.redirect("/login?errorpass=wrongpassword");
                     }
                 });
         });

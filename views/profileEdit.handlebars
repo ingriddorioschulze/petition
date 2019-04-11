@@ -10,6 +10,10 @@
         <input class="profile-edit-age" type="text" name="Age" placeholder="age" value="{{age}}">
         <input class=" profile-edit-city" type="text" name="City" placeholder="city" value="{{city}}">
         <input class=" profile-edit-homepage" type="text" name="Homepage" placeholder="homepage" value="{{url}}">
+        {{#if errorhomepage}}
+        <p class=" profile-error-homepage">Your homepage should start with http:// or https://. Please enter a valid
+            url!</p>
+        {{/if}}
         <input class="profile-edit-btn-submit" type="submit" value="UPDATE">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>

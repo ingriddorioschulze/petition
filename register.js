@@ -10,7 +10,9 @@ router
         if (req.session.user !== undefined) {
             res.redirect("/petition");
         } else {
-            res.render("register", {});
+            res.render("register", {
+                erroremail: req.query.erroremail
+            });
         }
     })
     .post((req, res) => {
@@ -36,7 +38,7 @@ router
                 res.redirect("/profile");
             })
             .catch(() => {
-                res.redirect("/register?error=email");
+                res.redirect("/register?erroremail=email");
             });
     });
 

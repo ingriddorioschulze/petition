@@ -8,7 +8,9 @@ router
     .route("/profile")
     .get((req, res) => {
         if (req.session.user.profileId == null) {
-            res.render("profile");
+            res.render("profile", {
+                errorhomepage: req.query.errorhomepage
+            });
         } else {
             res.redirect("/petition");
         }
@@ -20,7 +22,7 @@ router
             req.body.Homepage.indexOf("https://") !== 0 &&
             req.body.Homepage !== ""
         ) {
-            return res.redirect("/profile?error=invalidhomepage");
+            return res.redirect("/profile?errorhomepage=invalidhomepage");
         }
         db.saveProfile(
             req.session.user.id,
@@ -36,6 +38,7 @@ router
     .route("/profile/edit")
     .get((req, res) => {
         db.getEditProfile(req.session.user.id).then(editProfile => {
+            editProfile.errorhomepage = req.query.errorhomepage;
             res.render("profileEdit", editProfile);
         });
     })
@@ -46,7 +49,7 @@ router
             req.body.Homepage.indexOf("https://") !== 0 &&
             req.body.Homepage !== ""
         ) {
-            return res.redirect("/profile/edit?error=invalidhomepage");
+            return res.redirect("/profile/edit?errorhomepage=invalidhomepage");
         }
         let passwordPromise;
         if (req.body.Password === "") {

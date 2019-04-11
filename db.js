@@ -30,7 +30,7 @@ exports.getSignaturesCity = city => {
     FROM signatures
     JOIN user_profiles ON signatures.user_id = user_profiles.user_id
     JOIN users ON users.id = signatures.user_id
-    WHERE city = $1`;
+    WHERE LOWER(city) = LOWER($1)`;
     const params = [city];
     return db.query(q, params).then(result => {
         return result.rows;

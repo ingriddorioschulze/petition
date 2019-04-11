@@ -14,11 +14,13 @@ function checkSigned(request, response, next) {
 router
     .route("/petition")
     .get(checkSigned, (req, res) => {
-        res.render("home", {});
+        res.render("home", {
+            errorsignature: req.query.errorsignature
+        });
     })
     .post(checkSigned, (req, res) => {
         if (req.body.Signature === "") {
-            return res.redirect("/petition?error=emptysignature");
+            return res.redirect("/petition?errorsignature=emptysignature");
         }
         db.signatures(req.session.user, req.body.Signature, new Date())
             .then(id => {

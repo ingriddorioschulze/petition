@@ -8,6 +8,9 @@
         <input class="register-last-name" type="text" name="LastName" placeholder="last name" required>
         <input class="register-email" type="text" name="Email" placeholder="email" required>
         <input class="register-password" type="password" name="Password" placeholder="password" required>
+        {{#if erroremail}}
+        <p class="register-error-email">The email you wrote is already in use. Please choose another one.</p>
+        {{/if}}
         <input class="register-btn-submit" type="submit" value="SIGN UP">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>

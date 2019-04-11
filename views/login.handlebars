@@ -1,6 +1,15 @@
 <div class="login-container">
     {{>imagepigeon}}
     <p class="login-text">Please log in.</p>
+
+    {{#if erroruser}}
+    <p class="login-error-user">User not found. Please try again!</p>
+    {{/if}}
+
+    {{#if errorpass}}
+    <p class="login-error-pass">Wrong password. Please try again!</p>
+    {{/if}}
+
     <form method="POST">
         <input class="login-email" type="text" name="Email" placeholder="email" required>
         <input class="login-password" type="password" name="Password" placeholder="password" required>
