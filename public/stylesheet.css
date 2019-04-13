@@ -74,7 +74,7 @@ input.btn-submit {
 p.error-message {
   font-weight: bold;
   font-size: 20px;
-  color: red;
+  color: #ff5252;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -82,9 +82,9 @@ p.error-message {
 p.login-error-signature {
   font-weight: bold;
   font-size: 20px;
-  color: red;
+  color: #ff5252;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 /* THANKS/SIGNED PAGE */
@@ -226,7 +226,7 @@ p.login-member-text {
 p.login-error-user {
   font-weight: bold;
   font-size: 20px;
-  color: red;
+  color: #ff5252;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -234,7 +234,7 @@ p.login-error-user {
 p.login-error-pass {
   font-weight: bold;
   font-size: 20px;
-  color: red;
+  color: #ff5252;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -314,7 +314,7 @@ p.register-member-text {
 p.register-error-email {
   font-weight: bold;
   font-size: 20px;
-  color: red;
+  color: #ff5252;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -418,9 +418,9 @@ input.profile-btn-submit {
 p.profile-error-homepage {
   font-weight: bold;
   font-size: 20px;
-  color: red;
+  color: #ff5252;
   text-align: center;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 /* PROFILE EDIT PAGE */
