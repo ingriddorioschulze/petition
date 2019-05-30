@@ -1,20 +1,21 @@
-<div class="register-container">
-    <p class="title"><b>DON'T FEED</b> pigeons!</p>
+<div class="container">
+    <div class="title">DON'T FEED pigeons!</div>
 
     {{>imagepigeon}}
-    <p class="register-text">Berlin will be much better and clean without <a
-            href="https://en.wikipedia.org/wiki/Feral_pigeon">pigeons</a>. We need your support.
-        Sign the petition and join our campaign!</p>
+    <div class="text">Berlin will be much better and clean without <a
+            href="https://en.wikipedia.org/wiki/Feral_pigeon">pigeons</a>.
+        We need your support. Sign the petition and join our campaign!
+    </div>
     <form method="POST">
-        <input class="register-first-name" type="text" name="FirstName" placeholder="first name" required>
-        <input class="register-last-name" type="text" name="LastName" placeholder="last name" required>
-        <input class="register-email" type="text" name="Email" placeholder="email" required>
-        <input class="register-password" type="password" name="Password" placeholder="password" required>
+        <input class="input" type="text" name="FirstName" placeholder="first name" required>
+        <input class="input" type="text" name="LastName" placeholder="last name" required>
+        <input class="input" type="text" name="Email" placeholder="email" required>
+        <input class="input" type="password" name="Password" placeholder="password" required>
         {{#if erroremail}}
-        <p class="register-error-email">The email you wrote is already in use. Please choose another one.</p>
+        <div class="error-message">The email you wrote is already in use. Please choose another one.</div>
         {{/if}}
-        <input class="register-btn-submit" type="submit" value="SIGN UP">
+        <input class="btn" type="submit" value="SIGN UP">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
-    <p class="register-member-text">If you are already a member, please <a href="/login">log in</a>.</p>
+    <div class="second-text">If you are already a member, please <a href="/login">log in</a>.</div>
 </div>

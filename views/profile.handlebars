@@ -1,14 +1,16 @@
-<div class="profile-container">
-    <p class="profile-text">We would like to know a little more about you. Please give us details about yourself.</p>
+<div class="container">
+    <div class="title">DON'T FEED pigeons!</div>
+    {{>imagepigeon}}
+    <div class="text">We would like to know a little more about you. Please give us details about yourself.</div>
     <form method="POST">
-        <input class="profile-age" type="text" name="Age" placeholder="age">
-        <input class="profile-city" type="text" name="City" placeholder="city">
-        <input class="profile-homepage" type="text" name="Homepage" placeholder="homepage">
+        <input class="input" type="text" name="Age" placeholder="age">
+        <input class="input" type="text" name="City" placeholder="city">
+        <input class="input" type="text" name="Homepage" placeholder="homepage">
         {{#if errorhomepage}}
-        <p class=" profile-error-homepage">Your homepage should start with http:// or https://. Please enter a valid
-            url!</p>
+        <div class="error-message">Your homepage should start with http:// or https://. Please enter a valid
+            url!</div>
         {{/if}}
-        <input class="profile-btn-submit" type="submit" value="CONTINUE">
+        <input class="btn" type="submit" value="CONTINUE">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
 </div>

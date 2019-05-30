@@ -1,20 +1,19 @@
-<div class="profile-edit-container">
+<div class="container">
     {{>imagepigeon}}
-    <p class="profile-edit-text">Edit your profile.</p>
+    <div class="text">Edit your profile.</div>
     <form method="POST">
-        <input class="profile-edit-first-name" type="text" name="FirstName" placeholder="first name"
-            value="{{first_name}}">
-        <input class="profile-edit-last-name" type="text" name="LastName" placeholder="last name" value="{{last_name}}">
-        <input class="profile-edit-email" type="text" name="Email" placeholder="email" value="{{email_address}}">
-        <input class=" profile-edit-password" type="password" name="Password" placeholder="password">
-        <input class="profile-edit-age" type="text" name="Age" placeholder="age" value="{{age}}">
-        <input class=" profile-edit-city" type="text" name="City" placeholder="city" value="{{city}}">
-        <input class=" profile-edit-homepage" type="text" name="Homepage" placeholder="homepage" value="{{url}}">
+        <input class="input" type="text" name="FirstName" placeholder="first name" value="{{first_name}}">
+        <input class="input" type="text" name="LastName" placeholder="last name" value="{{last_name}}">
+        <input class="input" type="text" name="Email" placeholder="email" value="{{email_address}}">
+        <input class="input" type="password" name="Password" placeholder="password">
+        <input class="input" type="text" name="Age" placeholder="age" value="{{age}}">
+        <input class="input" type="text" name="City" placeholder="city" value="{{city}}">
+        <input class="input" type="text" name="Homepage" placeholder="homepage" value="{{url}}">
         {{#if errorhomepage}}
-        <p class=" profile-error-homepage">Your homepage should start with http:// or https://. Please enter a valid
-            url!</p>
+        <div class="error-message">Your homepage should start with http:// or https://. Please enter a valid
+            url!</div>
         {{/if}}
-        <input class="profile-edit-btn-submit" type="submit" value="UPDATE">
+        <input class="btn" type="submit" value="UPDATE">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
 </div>

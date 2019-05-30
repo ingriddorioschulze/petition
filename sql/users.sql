@@ -8,8 +8,3 @@ CREATE TABLE  users (
     password VARCHAR(250) NOT NULL,
     time TIMESTAMPTZ
 );
-
-ALTER TABLE users ADD COLUMN time TIMESTAMPTZ; 
-
-ALTER TABLE users ADD CONSTRAINT email_unique 
-UNIQUE (email_address);

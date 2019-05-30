@@ -1,10 +1,10 @@
-<div class="signers-container">
+<div class="container">
     {{>imagepigeon}}
 
-    <p class="signers-title">Here is a list of all the people who already signed our petition. We all agree that <a
+    <div class="text">Here is a list of all the people who already signed our petition. We all agree that <a
             href="https://en.wikipedia.org/wiki/Feral_pigeon">pigeons</a>
         are dangerous and that we have to do something to decrease their population by not feeding them.
-    </p>
+    </div>
 
     <ul>
         {{#each signatures}}
@@ -26,5 +26,4 @@
     </ul>
 </div>
 
-{{>logout}}
-{{>previous}}
+{{>logout}} {{>previous}}

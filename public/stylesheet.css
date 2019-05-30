@@ -1,132 +1,75 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   background-color: #624464;
   font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
-div.image-pigeon-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-img.image-pigeon {
-  width: 30%;
-}
-
-/* HOME PAGE */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p.title {
-  font-size: 60px;
-  color: #eaeaea;
-  text-align: center;
-}
-
-p.main-text {
-  font-size: 30px;
-  color: #eaeaea;
-  margin-bottom: 60px;
-  margin-top: 60px;
-  margin-right: 190px;
-  margin-left: 190px;
-  text-align: center;
-}
-
+.container,
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-p.sign-here {
-  font-weight: bold;
-  font-size: 15px;
-  color: #eaeaea;
-  text-align: center;
+.image {
+  width: 150px;
 }
 
-input.btn-submit {
+.title {
+  font-size: 40px;
+  color: #eaeaea;
+  text-align: center;
+  padding: 40px;
+}
+
+.text {
   font-size: 20px;
+  color: #eaeaea;
+  text-align: center;
+  padding: 40px;
+}
+
+.btn {
+  font-size: 15px;
   font-weight: bold;
   color: #eaeaea;
   height: 35px;
   width: 150px;
   border: dashed 1px #444444;
   background-color: #d02e77;
-  margin-top: 40px;
+  margin: 15px;
 }
 
 #canvas {
   background-color: #fed6be;
   border: dashed 1px #444444;
   cursor: crosshair;
+  margin: 20px;
 }
 
-p.error-message {
-  font-weight: bold;
-  font-size: 20px;
-  color: #ff5252;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-p.login-error-signature {
-  font-weight: bold;
-  font-size: 20px;
-  color: #ff5252;
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-/* THANKS/SIGNED PAGE */
-
-div.signature-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p.title-signature {
-  font-size: 60px;
-  color: #eaeaea;
-  text-align: center;
-}
-p.text-signature {
-  font-size: 30px;
-  margin-bottom: 40px;
-  color: #eaeaea;
-  text-align: center;
-}
-
-img.image-signature {
+.image-signature {
   background-color: #fed6be;
   border: solid 1px #eaeaea;
-  margin-top: 50px;
 }
 
-p.link-signature {
+.error-message {
+  font-weight: bold;
+  font-size: 15px;
+  color: #ff5252;
+  text-align: center;
+  padding: 20px;
+}
+
+.link {
   font-size: 20px;
-  margin-top: 70px;
   color: #eaeaea;
   text-align: center;
-}
-
-p.link-edit-profile {
-  font-size: 20px;
   margin-top: 40px;
-  margin-bottom: 20px;
-  color: #eaeaea;
-  text-align: center;
 }
 
 a {
@@ -144,378 +87,29 @@ a:hover {
   color: #eaeaea;
 }
 
-/* SIGNERS PAGE */
-
-div.signers-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p.signers-title {
-  font-size: 40px;
-  color: #eaeaea;
-  margin-right: 120px;
-  margin-left: 120px;
-  text-align: center;
-}
-
 ul {
   list-style-type: none;
-  line-height: 30px;
-  font-size: 20px;
+  font-size: 18px;
   color: #eaeaea;
   text-align: center;
+  margin: 0;
+  padding: 20px;
 }
 
-/* LOGIN PAGE  */
-
-div.login-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-}
-
-p.login-text {
-  font-size: 40px;
+.second-text {
+  font-size: 15px;
   color: #eaeaea;
   text-align: center;
-  margin-right: 190px;
-  margin-left: 190px;
+  padding: 10px;
 }
 
-.login-email {
+.input {
   background-color: #fed6be;
   height: 35px;
   width: 248px;
   border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
 }
-
-.login-password {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.login-btn-submit {
-  font-size: 20px;
-  font-weight: bold;
-  color: #eaeaea;
-  height: 35px;
-  width: 150px;
-  border: dashed 1px #444444;
-  background-color: #d02e77;
-  margin-top: 30px;
-}
-
-p.login-member-text {
-  font-size: 25px;
-  color: #eaeaea;
-  text-align: center;
-  margin-top: 40px;
-}
-
-p.login-error-user {
-  font-weight: bold;
-  font-size: 20px;
-  color: #ff5252;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-p.login-error-pass {
-  font-weight: bold;
-  font-size: 20px;
-  color: #ff5252;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-/* REGISTRATION PAGE  */
-
-div.register-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p.register-text {
-  font-size: 40px;
-  color: #eaeaea;
-  text-align: center;
-  margin-bottom: 60px;
-  margin-right: 190px;
-  margin-left: 190px;
-}
-
-input.register-first-name {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.register-last-name {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.register-email {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.register-password {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.register-btn-submit {
-  font-size: 20px;
-  font-weight: bold;
-  color: #eaeaea;
-  height: 35px;
-  width: 150px;
-  border: dashed 1px #444444;
-  background-color: #d02e77;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-p.register-member-text {
-  font-size: 25px;
-  color: #eaeaea;
-  text-align: center;
-}
-
-p.register-error-email {
-  font-weight: bold;
-  font-size: 20px;
-  color: #ff5252;
-  text-align: center;
-  margin-top: 60px;
-}
-
-/* LOGOUT */
-
-div.logout-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-input.logout-btn-submit {
-  font-size: 20px;
-  font-weight: bold;
-  color: #eaeaea;
-  height: 35px;
-  width: 200px;
-  border: dashed 1px #444444;
-  background-color: #d02e77;
-  margin-top: 30px;
-}
-
-/* PREVIOUS */
-
-div.previous-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-input.previous-btn-submit {
-  font-size: 20px;
-  font-weight: bold;
-  color: #eaeaea;
-  height: 35px;
-  width: 200px;
-  border: dashed 1px #444444;
-  background-color: #d02e77;
-  margin-top: 30px;
-}
-
-/* PROFILE PAGE */
-
-div.profile-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p.profile-text {
-  font-size: 40px;
-  color: #eaeaea;
-  text-align: center;
-  margin-bottom: 60px;
-  margin-right: 190px;
-  margin-left: 190px;
-}
-
-input.profile-age {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-city {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-homepage {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-btn-submit {
-  font-size: 20px;
-  font-weight: bold;
-  color: #eaeaea;
-  height: 35px;
-  width: 150px;
-  border: dashed 1px #444444;
-  background-color: #d02e77;
-  margin-top: 30px;
-}
-
-p.profile-error-homepage {
-  font-weight: bold;
-  font-size: 20px;
-  color: #ff5252;
-  text-align: center;
-  margin-top: 50px;
-}
-
-/* PROFILE EDIT PAGE */
-
-div.profile-edit-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-p.profile-edit-text {
-  font-size: 40px;
-  color: #eaeaea;
-  text-align: center;
-  margin-bottom: 60px;
-  margin-right: 190px;
-  margin-left: 190px;
-}
-
-input.profile-edit-first-name {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-last-name {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-email {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-password {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-age {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-city {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-homepage {
-  background-color: #fed6be;
-  height: 35px;
-  width: 248px;
-  border: dashed 1px #444444;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input.profile-edit-btn-submit {
-  font-size: 20px;
-  font-weight: bold;
-  color: #eaeaea;
-  height: 35px;
-  width: 150px;
-  border: dashed 1px #444444;
-  background-color: #d02e77;
-  margin-top: 50px;
-}
-
-/* DELETE SIGNATURE */
 
 input.link-delete-signature {
   font-size: 20px;
@@ -523,15 +117,24 @@ input.link-delete-signature {
   background: none;
   padding: 0;
   text-align: center;
-  margin-bottom: 20px;
-  margin-right: 190px;
-  margin-left: 190px;
   border: none;
   font-weight: bold;
   text-decoration: none;
+  margin: 20px;
 }
 
 input.link-delete-signature:hover {
   text-decoration: underline;
   color: #eaeaea;
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    width: 100px;
+  }
+
+  #canvas,
+  .image-signature {
+    width: 80%;
+  }
 }

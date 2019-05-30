@@ -28,7 +28,3 @@ function draw() {
     ctx.closePath();
     ctx.stroke();
 }
-
-//mouse move//
-//watch the event//
-//layer X Y//

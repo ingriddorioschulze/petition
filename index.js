@@ -50,8 +50,6 @@ app.use(registerRouter);
 
 app.use(loginRouter);
 
-//ROUTE LOGOUT//
-
 app.post("/logout", (req, res) => {
     req.session = null;
     res.redirect("/register");
@@ -59,13 +57,9 @@ app.post("/logout", (req, res) => {
 app.use("/profile", checkLogIn);
 app.use(profileRouter);
 
-//ROUTE PREVIOUS//
-
 app.use("/previous", (req, res) => {
     res.redirect("/petition/signed");
 });
-
-//DELETE SIGNATURE//
 
 app.post("/signature/delete", checkLogIn, (req, res) => {
     db.deleteSignature(req.session.user.id).then(() => {
@@ -73,8 +67,6 @@ app.post("/signature/delete", checkLogIn, (req, res) => {
         res.redirect("/petition");
     });
 });
-
-//SERVER//
 
 if (require.main == module) {
     app.listen(process.env.PORT || 8080, () => console.log("Oi, petition!"));

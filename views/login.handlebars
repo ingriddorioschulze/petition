@@ -1,21 +1,21 @@
-<div class="login-container">
-    <p class="title"><b>DON'T FEED</b> pigeons!</p>
+<div class="container">
+    <div class="title">DON'T FEED pigeons!</div>
     {{>imagepigeon}}
-    <p class="login-text">Please log in.</p>
+    <div class="text">Please log in.</div>
 
     {{#if erroruser}}
-    <p class="login-error-user">User not found. Please try again!</p>
+    <div class="error-message">User not found. Please try again!</div>
     {{/if}}
 
     {{#if errorpass}}
-    <p class="login-error-pass">Wrong password. Please try again!</p>
+    <div class="error-message">Wrong password. Please try again!</div>
     {{/if}}
 
     <form method="POST">
-        <input class="login-email" type="text" name="Email" placeholder="email" required>
-        <input class="login-password" type="password" name="Password" placeholder="password" required>
-        <input class="login-btn-submit" type="submit" value="LOG IN">
+        <input class="input" type="text" name="Email" placeholder="email" required>
+        <input class="input" type="password" name="Password" placeholder="password" required>
+        <input class="btn" type="submit" value="LOG IN">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
     </form>
-    <p class="login-member-text">If you are <b>not</b> a member, please register <a href="/register">here</a>.</p>
+    <div class="second-text">If you are <b>not</b> a member, please register <a href="/register">here</a>.</div>
 </div>

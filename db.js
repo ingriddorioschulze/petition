@@ -45,8 +45,6 @@ exports.getImageSignature = id => {
     });
 };
 
-//REGISTER//
-
 exports.saveUser = function saveUser(
     first_name,
     last_name,
@@ -131,8 +129,6 @@ exports.updateProfile = function(
         return db.query(profileQuery, profileParams);
     });
 };
-
-//DELETE SIGNATURE//
 
 exports.deleteSignature = function(user_id) {
     const q = `DELETE FROM signatures WHERE user_id = $1`;

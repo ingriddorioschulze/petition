@@ -8,8 +8,3 @@ CREATE TABLE  user_profiles (
     url VARCHAR(250)
 
 );
-
-ALTER TABLE user_profiles ADD CONSTRAINT user_id_unique 
-UNIQUE (user_id);
-
-ALTER TABLE user_profiles ALTER COLUMN user_id SET NOT NULL;
